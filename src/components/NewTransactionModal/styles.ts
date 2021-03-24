@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {darken} from 'polished';
+import { darken } from 'polished';
 
 export const Container = styled.form`
   h2 { 
@@ -55,12 +55,18 @@ display: grid;
 grid-template-columns: 1fr 1fr;
 gap: 0.5rem;
 
-button {
-  height: 4rem;
+`;
+
+interface RadioBoxProps {
+  isActive: boolean;
+}
+
+export const RadioBox = styled.button<RadioBoxProps>`
+height: 4rem;
   border: 1px solid #d7d7d7;
   border-radius: 0.25rem;
 
-  background: transparent;
+  background: ${(props)=> props.isActive ? '#ccc' : 'transparente'};
 
   display: flex;
   align-items: center;
@@ -69,7 +75,7 @@ button {
   transition: filter 0.2s;
 
   &:hover {
-    border-color: ${darken(0.1,'#d7d7d7')};
+    border-color: ${darken(0.1, '#d7d7d7')};
   }
 
   img { 
@@ -83,6 +89,4 @@ button {
     font-size: 1rem;
     color: var(--text-title);
   }
-
-}
 `;
