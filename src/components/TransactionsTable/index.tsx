@@ -32,7 +32,7 @@ export function TransactionsTable() {
             <th>Data</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody> 
           {transactions.map(transaction => {
             return (
               <tr key={transaction.id}>
